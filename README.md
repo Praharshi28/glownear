@@ -53,7 +53,7 @@ Built for **SuperXgen AI Startup Buildathon 2026** — Beauty Salon Marketplace 
 ## 🚀 Run Locally
 
 ```bash
-git clone https://github.com/YOURUSERNAME/glownear.git
+git clone https://github.com/Praharshi28/glownear.git
 cd glownear
 npm install
 npm run dev
