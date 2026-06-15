@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { X, Send, Upload, Sparkles } from 'lucide-react'
 
+const GROQ_KEY = import.meta.env.VITE_GROQ_API_KEY
 const QUICK_PROMPTS = [
   "Best bridal salon in Mumbai?",
   "Suggest makeup for a date night 💄",

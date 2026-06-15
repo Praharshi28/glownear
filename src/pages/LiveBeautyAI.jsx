@@ -2,7 +2,7 @@ import { useState, useRef, useCallback } from 'react'
 import { Camera, X, Sparkles, RefreshCw } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
-const GROQ_KEY = "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"
+const GROQ_KEY = import.meta.env.VITE_GROQ_API_KEY
 
 export default function LiveBeautyAI() {
   const navigate = useNavigate()
