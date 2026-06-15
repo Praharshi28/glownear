@@ -139,7 +139,6 @@ Be warm, specific, and encouraging. Tailor advice for Indian beauty standards.`
   return (
     <div className="min-h-screen bg-gray-50">
 
-      {/* Header */}
       <div className="bg-gradient-to-br from-purple-500 to-pink-500 py-10 px-4 text-white">
         <div className="max-w-2xl mx-auto">
           <button onClick={() => navigate('/')} className="text-purple-200 text-sm mb-4 flex items-center gap-1 hover:text-white transition">
@@ -155,28 +154,18 @@ Be warm, specific, and encouraging. Tailor advice for Indian beauty standards.`
 
       <div className="max-w-2xl mx-auto px-4 py-8">
 
-        {/* Camera Box */}
         <div className="bg-white rounded-3xl shadow-sm overflow-hidden mb-6 border border-gray-100">
           <div className="relative bg-gray-900 aspect-video flex items-center justify-center">
 
-            {/* Live Video */}
-            <video
-              ref={videoRef}
-              autoPlay
-              playsInline
-              muted
-              className={`w-full h-full object-cover ${cameraOn ? 'block' : 'hidden'}`}
-            />
+            <video ref={videoRef} autoPlay playsInline muted
+              className={`w-full h-full object-cover ${cameraOn ? 'block' : 'hidden'}`} />
 
-            {/* Canvas (hidden) */}
             <canvas ref={canvasRef} className="hidden" />
 
-            {/* Captured Image */}
             {capturedImage && !cameraOn && (
               <img src={capturedImage} alt="captured" className="w-full h-full object-cover" />
             )}
 
-            {/* Placeholder */}
             {!cameraOn && !capturedImage && (
               <div className="text-center text-gray-400 py-16">
                 <Camera size={64} className="mx-auto mb-4 opacity-30" />
@@ -185,7 +174,6 @@ Be warm, specific, and encouraging. Tailor advice for Indian beauty standards.`
               </div>
             )}
 
-            {/* Analyzing Overlay */}
             {analyzing && (
               <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-white">
                 <div className="text-5xl mb-4 animate-pulse">🔍</div>
@@ -198,7 +186,6 @@ Be warm, specific, and encouraging. Tailor advice for Indian beauty standards.`
               </div>
             )}
 
-            {/* Camera overlay guides */}
             {cameraOn && (
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-black/40 text-white text-xs px-3 py-1 rounded-full">
@@ -209,7 +196,6 @@ Be warm, specific, and encouraging. Tailor advice for Indian beauty standards.`
             )}
           </div>
 
-          {/* Camera Controls */}
           <div className="p-5">
             {error && (
               <div className="bg-red-50 text-red-500 text-sm px-4 py-3 rounded-xl mb-4">{error}</div>
@@ -217,34 +203,26 @@ Be warm, specific, and encouraging. Tailor advice for Indian beauty standards.`
 
             <div className="flex gap-3">
               {!cameraOn ? (
-                <button
-                  onClick={startCamera}
-                  className="flex-1 bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-2xl font-bold flex items-center justify-center gap-2 transition"
-                >
+                <button onClick={startCamera}
+                  className="flex-1 bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-2xl font-bold flex items-center justify-center gap-2 transition">
                   <Camera size={20} /> Start Camera
                 </button>
               ) : (
                 <>
-                  <button
-                    onClick={captureAndAnalyze}
-                    className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-2xl font-bold flex items-center justify-center gap-2 transition hover:opacity-90"
-                  >
+                  <button onClick={captureAndAnalyze}
+                    className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-2xl font-bold flex items-center justify-center gap-2 transition hover:opacity-90">
                     <Sparkles size={20} /> Analyze My Look ✨
                   </button>
-                  <button
-                    onClick={stopCamera}
-                    className="bg-gray-100 text-gray-600 px-4 py-3 rounded-2xl font-semibold hover:bg-gray-200 transition"
-                  >
+                  <button onClick={stopCamera}
+                    className="bg-gray-100 text-gray-600 px-4 py-3 rounded-2xl font-semibold hover:bg-gray-200 transition">
                     <X size={20} />
                   </button>
                 </>
               )}
 
               {capturedImage && !cameraOn && (
-                <button
-                  onClick={startCamera}
-                  className="bg-gray-100 text-gray-600 px-4 py-3 rounded-2xl font-semibold hover:bg-gray-200 transition flex items-center gap-2"
-                >
+                <button onClick={startCamera}
+                  className="bg-gray-100 text-gray-600 px-4 py-3 rounded-2xl font-semibold hover:bg-gray-200 transition flex items-center gap-2">
                   <RefreshCw size={18} /> Retake
                 </button>
               )}
@@ -252,11 +230,9 @@ Be warm, specific, and encouraging. Tailor advice for Indian beauty standards.`
           </div>
         </div>
 
-        {/* Results */}
         {result && (
-          <div className="space-y-4 animate-fade-in">
+          <div className="space-y-4">
 
-            {/* Face Analysis */}
             <div className="bg-white rounded-2xl shadow-sm p-5 border border-gray-100">
               <h3 className="font-bold text-gray-800 text-lg mb-4">✨ Your Face Analysis</h3>
               <div className="grid grid-cols-2 gap-3">
@@ -275,7 +251,6 @@ Be warm, specific, and encouraging. Tailor advice for Indian beauty standards.`
               </div>
             </div>
 
-            {/* Top Looks */}
             <div className="bg-white rounded-2xl shadow-sm p-5 border border-gray-100">
               <h3 className="font-bold text-gray-800 text-lg mb-4">🎨 Your Top Looks</h3>
               <div className="grid grid-cols-3 gap-3">
@@ -288,7 +263,6 @@ Be warm, specific, and encouraging. Tailor advice for Indian beauty standards.`
               </div>
             </div>
 
-            {/* Recommendations */}
             <div className="bg-white rounded-2xl shadow-sm p-5 border border-gray-100">
               <h3 className="font-bold text-gray-800 text-lg mb-4">💄 Personalized Recommendations</h3>
               <div className="space-y-3">
@@ -308,30 +282,23 @@ Be warm, specific, and encouraging. Tailor advice for Indian beauty standards.`
               </div>
             </div>
 
-            {/* Salon Recommendation */}
             <div className="bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl p-5 text-white">
               <h3 className="font-bold text-lg mb-2">🏆 Recommended Salon for You</h3>
               <p className="text-pink-100 text-sm mb-1">Based on your features and style</p>
               <p className="font-bold text-xl mb-4">{result.salon}</p>
-              <button
-                onClick={() => navigate('/salons')}
-                className="bg-white text-pink-500 px-6 py-2 rounded-full font-bold text-sm hover:bg-pink-50 transition"
-              >
+              <button onClick={() => navigate('/salons')}
+                className="bg-white text-pink-500 px-6 py-2 rounded-full font-bold text-sm hover:bg-pink-50 transition">
                 Book Now 💅
               </button>
             </div>
 
-            {/* Personal Tip */}
             <div className="bg-yellow-50 border border-yellow-200 rounded-2xl p-5">
               <h3 className="font-bold text-gray-800 mb-2">💛 Your Personal Beauty Tip</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{result.tip}</p>
             </div>
 
-            {/* Retake */}
-            <button
-              onClick={() => { setResult(null); setCapturedImage(null); startCamera() }}
-              className="w-full bg-gray-100 text-gray-600 py-3 rounded-2xl font-semibold hover:bg-gray-200 transition flex items-center justify-center gap-2"
-            >
+            <button onClick={() => { setResult(null); setCapturedImage(null); startCamera() }}
+              className="w-full bg-gray-100 text-gray-600 py-3 rounded-2xl font-semibold hover:bg-gray-200 transition flex items-center justify-center gap-2">
               <RefreshCw size={18} /> Try Again with New Photo
             </button>
           </div>
